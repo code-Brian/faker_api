@@ -19,7 +19,7 @@ const createUser = () => {
 const createCompany = () => {
     const newCompany = {
         _id: faker.datatype.number(),
-        name: faker.company.companyName(),
+        name: faker.company.companyName().companySuffix(),
         address: {
             street: faker.address.streetName(),
             city: faker.address.cityName(),
@@ -27,20 +27,22 @@ const createCompany = () => {
             zipCode: faker.address.zipCode(),
             country: faker.address.country()
         }
-
     }
+    return newCompany
 }
 
 app.get('/api/users/new', (req, res) => {
     res.json(createUser())
 })
 
-app.get('/api/companies/create', (req, res) => {
+app.get('/api/companies/new', (req, res) => {
     res.json(createCompany())
 })
 
 app.get('/api/user/company', (req,res) => {
-    res.json({})
+    const user = createUser()
+    const company = createCompany()
+    res.json({user: user, company: company})
 })
 
 app.listen( port, () => console.log(`Listening on port: ${port}`) )
