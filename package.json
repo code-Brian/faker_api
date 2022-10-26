@@ -1,7 +1,6 @@
 {
   "name": "faker_api",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,5 +11,18 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0"
-  }
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "faker": "^5.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-Brian/faker_api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/code-Brian/faker_api/issues"
+  },
+  "homepage": "https://github.com/code-Brian/faker_api#readme",
+  "description": ""
 }
